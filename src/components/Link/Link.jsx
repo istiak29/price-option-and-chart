@@ -1,15 +1,18 @@
-import PropTypes from "prop-types";
 
-const Link = ({ route }) => {
-  const { path, title } = route;
+import PropTypes from 'prop-types';
+
+Link.propTypes = {
+  route: PropTypes.object
+};
+
+function Link({route}) {
   return (
-    <li className="mr-10 hover:bg-slate-200 ">
-      <a href={path}>{title}</a>
-    </li>
+    <div>
+      <li className="mr-10 hover:bg-slate-200 ">
+        <a href={route.path}>{route.title}</a>
+      </li>
+    </div>
   );
-};
+}
 
-Link.propType = {
-  route: PropTypes.object,
-};
 export default Link;
